@@ -12,11 +12,11 @@ export default function Homepage(){
     const[page,setPage] = useState(1)
 
     useEffect(()=>{
-        axios.get(`https://www.omdbapi.com/?i=tt3896198&apikey=94b792dc&s=${movieName}&page=${page}`)
+        axios.get(`https://omdb-movies-data.onrender.com/movie/${movieName}/${page}`)
         .then(res=>{
-            setMovies(res.data.Search);
+            setMovies(res.data.data.Search);
             console.log(res.data)
-            setTotalResults(Number(res.data.totalResults))
+            setTotalResults(Number(res.data.data.totalResults))
         })
         .catch(err=>console.log(err))
     },[movieName,page])

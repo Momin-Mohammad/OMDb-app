@@ -6,6 +6,17 @@
 }
 
 .Pagination_Button_Div{
+    flex-grow: 1;
     display: flex;
     overflow-x: hidden;
+}
+
+button{
+    flex-grow: 1;
+    font-size: large;
+    background-color: black;
+    border: 1.5px solid gray;
+    color: whitesmoke;
+    border-radius: 10px;
+    padding: 2% 3%;
 }

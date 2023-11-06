@@ -1,30 +1,33 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
+import styles from './MovieDetails.module.css';
 
 export default function MovieDetails(){
     const {id} = useParams();
     const[movieDetails,setMovieDetails] = useState({});
 console.log(id)
     useEffect(()=>{
-        axios.get(`https://www.omdbapi.com/?i=${id}&apikey=94b792dc`)
+        axios.get(`https://omdb-movies-data.onrender.com/movie/${id}`)
         .then(res=>{
             console.log(res.data)
-            setMovieDetails(res.data)})
+            setMovieDetails(res.data.data)})
         .catch(err=>console.log(err))
     },[])
 
     return(
-        <div>
-                <h2>{movieDetails.Title}</h2>
-                <img src={movieDetails.Poster} />
-                <p>Release Date: {movieDetails.Released}</p>
-                <p>Type: {movieDetails.Type}</p>
-                <p>Actors: {movieDetails.Actors}</p>
-                <p>Country: {movieDetails.Country}</p>
-                <p>Rated: {movieDetails.Rated}</p>
-                <p>IMDb rating: {movieDetails.imdbRating}</p>
-                <p>Writer: {movieDetails.Writer}</p>
+        <div className={styles.MovieDetails_Main_Div}>
+             <div><img src={movieDetails.Poster} /></div>
+
+                <div><h2>{movieDetails.Title}</h2>
+                <p><b>Release Date:</b> {movieDetails.Released}</p>
+                <p><b>Type:</b> {movieDetails.Type}</p>
+                <p><b>Actors:</b> {movieDetails.Actors}</p>
+                <p><b>Country:</b> {movieDetails.Country}</p>
+                <p><b>Rated:</b> {movieDetails.Rated}</p>
+                <p><b>IMDb rating:</b> {movieDetails.imdbRating}</p>
+                <p><b>Writer:</b> {movieDetails.Writer}</p>
+                </div>
         </div>
     )
 }

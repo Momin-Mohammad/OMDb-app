@@ -8,7 +8,8 @@ export default function Suggestions({showSuggestion,movies}){
         <div style={{display:showSuggestion?"block":"none"}} className={styles.Suggestion_Main_div}>
             {
                 movies.map((ele)=>
-                <div>
+                <div className={styles.Suggestion_Movie}>
+                    <img src={ele.Poster} />
                     <h4 style={{cursor:"pointer"}} onClick={()=>navigate(`/${ele.imdbID}`)}>{ele.Title}</h4>
                 </div>
                 )

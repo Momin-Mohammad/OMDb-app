@@ -13,12 +13,17 @@ export default function SearchBar({setMovieName,setTotalResults,setMovies}){
         e.preventDefault();
         setName(e.target.value);
         let movie_name = e.target.value;
-        axios.get(`https://www.omdbapi.com/?i=tt3896198&apikey=94b792dc&s=${movie_name}`)
+        if(!movie_name){
+            setDisplaySuggestion(false);
+            return
+        }
+        axios.get(`https://omdb-movies-data.onrender.com/movie/${movie_name}/1`)
         .then(res=>{
-            if(res.data.Response == 'True'){
-                setSuggestions(res.data.Search);
+            console.log(res.data)
+            if(res.data.data.Response == 'True'){
+                setSuggestions(res.data.data.Search);
                 setDisplaySuggestion(true);
-                setResults(Number(res.data.totalResults))
+                setResults(Number(res.data.data.totalResults))
             }
         })
         .catch(err=>console.log('Error:',err));
