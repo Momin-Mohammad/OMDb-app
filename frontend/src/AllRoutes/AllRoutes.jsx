@@ -6,7 +6,7 @@ export default function AllRoutes(){
     return(
         <Routes>
             <Route path="/" element={<Homepage />}/>
-            <Route path="/:heading" element={<MovieDetails />}/>
+            <Route path="/:id" element={<MovieDetails />}/>
         </Routes>
     )
 }

@@ -6,7 +6,7 @@
     align-items: center;
     padding: 0% 5%;
     background-color: black;
-    height: 15vh;
+    height: auto;
 }
 
 .Navbar_Main_div > img{
@@ -38,6 +38,8 @@
 }
 
 .Suggestion_Main_div{
+    height: 30vh;
+    overflow-y: scroll;
     width: 40%;
     position: absolute;
     background-color: whitesmoke;
@@ -45,4 +47,56 @@
     padding:2% 1%;
     border: 1.5px solid gray;
     border-radius: 10px;
+}
+
+@media screen and (max-width:850px) {
+    .Suggestion_Main_div{
+        height: 20vh;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .Navbar_Main_div{
+        padding: 0% 1%;
+    }
+
+    .Navbar_Main_div > img{
+        width:15%;
+    }
+
+    .SearchBar_Main_Div{
+        width: 80%;
+    }
+
+    .SearchBar_form > input:last-child{
+        width: 20%;
+        font-size: medium;
+    }
+
+    .Suggestion_Main_div{
+        width : 58%;
+        height: 25vh;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .Navbar_Main_div{
+        flex-direction: column;
+        padding-bottom: 3%;
+    }
+
+    .Navbar_Main_div > img{
+        width:15%;
+        height: 100%;
+    }
+
+    .SearchBar_Main_Div{
+        width: 100%;
+    }
+
+    .Suggestion_Main_div{
+        width : 100%;
+        left : 0px;
+    }
 }
