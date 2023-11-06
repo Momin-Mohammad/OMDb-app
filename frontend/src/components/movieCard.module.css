@@ -1,0 +1,10 @@
+.MovieCard_Div{
+    padding: 1% 2%;
+    background-color: black;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.MovieCard_Div > img{
+    width: 100%;
+}

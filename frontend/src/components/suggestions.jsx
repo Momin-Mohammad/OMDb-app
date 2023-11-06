@@ -1,9 +1,9 @@
 import styles from './searchbar.module.css';
 
-export default function Suggestions({movies}){
+export default function Suggestions({showSuggestion,movies}){
    
     return(
-        <div style={{display:movies.length?"block":"none"}} className={styles.Suggestion_Main_div}>
+        <div style={{display:showSuggestion?"block":"none"}} className={styles.Suggestion_Main_div}>
             {
                 movies.map((ele)=>
                 <div>
