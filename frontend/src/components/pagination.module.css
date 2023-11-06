@@ -1,0 +1,11 @@
+.Pagination_Main_Div{
+    width: 50%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 2%;
+}
+
+.Pagination_Button_Div{
+    display: flex;
+    overflow-x: hidden;
+}

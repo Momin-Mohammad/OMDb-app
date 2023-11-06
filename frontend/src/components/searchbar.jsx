@@ -3,9 +3,10 @@ import axios from "axios";
 import Suggestions from "./suggestions";
 import styles from './searchbar.module.css';
 
-export default function SearchBar({setMovies}){
+export default function SearchBar({setMovieName,setTotalResults,setMovies}){
     const[suggestions,setSuggestions] = useState([]);
     const[name,setName] = useState('');
+    const[results,setResults] = useState(0);
     const[displaySuggestion,setDisplaySuggestion] = useState(false);
 
     const suggestMovies=(e)=>{
@@ -17,6 +18,7 @@ export default function SearchBar({setMovies}){
             if(res.data.Response == 'True'){
                 setSuggestions(res.data.Search);
                 setDisplaySuggestion(true);
+                setResults(Number(res.data.totalResults))
             }
         })
         .catch(err=>console.log('Error:',err));
@@ -27,7 +29,9 @@ export default function SearchBar({setMovies}){
         if(!name || !suggestions){
             return;
         }
-        setDisplaySuggestion(false)
+        setMovieName(name);
+        setTotalResults(results);
+        setDisplaySuggestion(false);
         setMovies(suggestions);
     }
 

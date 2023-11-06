@@ -1,8 +1,7 @@
 .Homepage_Movies_Div{
-    margin: 2% 2%;
+    margin: 2% 1%;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 2%;
 }
 
 @media screen and (max-width: 800px) {

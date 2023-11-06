@@ -1,5 +1,7 @@
 .MovieCard_Div{
     padding: 1% 2%;
+    margin:2%;
+    height: auto;
     background-color: black;
     color: whitesmoke;
     cursor: pointer;
