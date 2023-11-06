@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from './MovieDetails.module.css';
+import Navbar from "../components/navbar";
 
 export default function MovieDetails(){
     const {id} = useParams();
@@ -16,6 +17,8 @@ console.log(id)
     },[])
 
     return(
+        <div>
+              <Navbar />
         <div className={styles.MovieDetails_Main_Div}>
              <div><img src={movieDetails.Poster} /></div>
 
@@ -28,6 +31,7 @@ console.log(id)
                 <p><b>IMDb rating:</b> {movieDetails.imdbRating}</p>
                 <p><b>Writer:</b> {movieDetails.Writer}</p>
                 </div>
+        </div>
         </div>
     )
 }
