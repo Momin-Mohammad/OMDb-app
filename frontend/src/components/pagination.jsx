@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './pagination.module.css';
+import styles from '../styles/pagination.module.css';
 
 export default function Pagination({page,setPage,totalResults}){
     const[scroll,setScroll] = useState(10)

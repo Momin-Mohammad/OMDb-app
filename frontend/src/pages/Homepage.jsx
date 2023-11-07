@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/navbar";
 import MovieCard from "../components/movieCard";
 import axios from "axios";
-import styles from './Homepage.module.css';
+import styles from '../styles/Homepage.module.css';
 import Pagination from "../components/pagination";
 
 export default function Homepage(){
@@ -15,7 +15,6 @@ export default function Homepage(){
         axios.get(`https://omdb-movies-data.onrender.com/movie/${movieName}/${page}`)
         .then(res=>{
             setMovies(res.data.data.Search);
-            console.log(res.data)
             setTotalResults(Number(res.data.data.totalResults))
         })
         .catch(err=>console.log(err))

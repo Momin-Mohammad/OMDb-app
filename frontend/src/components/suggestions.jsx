@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import styles from './searchbar.module.css';
+import styles from '../styles/searchbar.module.css';
 
 export default function Suggestions({showSuggestion,movies}){
    const navigate = useNavigate();

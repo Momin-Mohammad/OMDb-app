@@ -8,6 +8,8 @@
     background-color: black;
     height: auto;
     font-family: cursive;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .Navbar_Main_div > img{
@@ -33,6 +35,7 @@
     padding: 1% 2%;
     font-size: larger;
     font-family: cursive;
+    color:black;
 }
 
 .SearchBar_form > input:last-child{
@@ -40,6 +43,7 @@
     font-size: larger;
     font-weight: bold;
     font-family: cursive;
+    color:black;
 }
 
 .Suggestion_Main_div{
@@ -76,6 +80,7 @@
 @media screen and (max-width: 650px) {
     .Navbar_Main_div{
         padding: 0% 1%;
+        border-radius: 0px;
     }
 
     .Navbar_Main_div > img{

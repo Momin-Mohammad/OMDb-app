@@ -1,4 +1,4 @@
-import styles from './searchbar.module.css';
+import styles from '../styles/searchbar.module.css';
 import logo from '../images/logo.jpg';
 import {useNavigate, useParams} from 'react-router-dom';
 import SearchBar from './searchbar';

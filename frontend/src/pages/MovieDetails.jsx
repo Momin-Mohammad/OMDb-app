@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from './MovieDetails.module.css';
+import styles from '../styles/MovieDetails.module.css';
 import Navbar from "../components/navbar";
 
 export default function MovieDetails(){
@@ -11,7 +11,6 @@ console.log(id)
     useEffect(()=>{
         axios.get(`https://omdb-movies-data.onrender.com/movie/${id}`)
         .then(res=>{
-            console.log(res.data)
             setMovieDetails(res.data.data)})
         .catch(err=>console.log(err))
     },[])

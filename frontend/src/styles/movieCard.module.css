@@ -1,10 +1,12 @@
 .MovieCard_Div{
     padding: 1% 2%;
+    border-radius: 20px;
     margin:2%;
     height: auto;
-    background-color: black;
+    background-color: rgb(63, 24, 10);
     color: whitesmoke;
     cursor: pointer;
+    border: 8px solid black;
 }
 
 .MovieCard_Div > img{

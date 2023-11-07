@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Suggestions from "./suggestions";
-import styles from './searchbar.module.css';
+import styles from '../styles/searchbar.module.css';
 
 export default function SearchBar({setMovieName,setTotalResults,setMovies}){
     const[suggestions,setSuggestions] = useState([]);
@@ -19,7 +19,6 @@ export default function SearchBar({setMovieName,setTotalResults,setMovies}){
         }
         axios.get(`https://omdb-movies-data.onrender.com/movie/${movie_name}/1`)
         .then(res=>{
-            console.log(res.data)
             if(res.data.data.Response == 'True'){
                 setSuggestions(res.data.data.Search);
                 setDisplaySuggestion(true);
